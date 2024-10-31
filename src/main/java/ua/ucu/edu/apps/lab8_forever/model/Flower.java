@@ -3,10 +3,12 @@ package ua.ucu.edu.apps.lab8_forever.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter @Setter
 @Entity
 @Table(name = "flowers")
+@ToString
 public class Flower extends Item{
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
