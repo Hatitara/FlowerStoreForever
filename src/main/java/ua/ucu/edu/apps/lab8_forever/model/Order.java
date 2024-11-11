@@ -4,10 +4,12 @@ import ua.ucu.edu.apps.lab8_forever.model.delivery.Delivery;
 import ua.ucu.edu.apps.lab8_forever.model.payment.Payment;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Order {
 
     LinkedList<Item> items;
+    List<User> users;
     Payment payment;
     Delivery delivery;
 
@@ -44,5 +46,23 @@ public class Order {
             }
         }
         return false;
+    }
+
+    public void addUser(User user) {
+        users.add(user);
+    }
+
+    public void removeUser(User user) {
+        users.remove(user);
+    }
+
+    public void notifyUsers() {
+        for (User user : users) {
+            user.update(user.toString());
+        }
+    }
+
+    public void order() {
+        notifyUsers();
     }
 }
